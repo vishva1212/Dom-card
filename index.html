@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+    <title>card</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 90%;
+            margin: auto;
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col{
+            width: 25%;
+            padding: 20px;
+            min-height: 450px;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        .col-card{
+            padding: 10px;
+        }
+
+        .col-card:hover{
+            border-radius: 5px;
+            box-shadow: 0 0 10px #ccc;
+            cursor: pointer;
+
+        }
+    
+        p{
+            color:#716a6a;
+            margin: 10px;
+           
+        }
+
+        h2{
+            padding-left: 10px;
+
+        }
+        .price{
+            display: flex;
+            justify-content: space-evenly;
+            margin: 5px;
+        }
+        .paraname{
+            background-color: rgb(29, 133, 29);
+            color:white;
+            width: 50px;
+        }
+        h4{
+            color:rgb(118, 10, 10);
+            text-align: center;
+            border-top: solid 1px rgb(184, 180, 180);
+            padding: 10px;
+           
+        }
+
+        h3{
+            display:none;
+            padding: 20px;
+           
+            border-top: solid 1px #c9bcbc;
+        }
+        .col-card:hover h3{
+        display:block !important;
+        color:blue;
+        text-align: center;
+    }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+    </div>
+
+
+    <script>
+
+
+        let foodlist=[
+            {
+                id:1,
+                name:"Ram veg Resturant",
+                Location:"Tamil Nadu,salam",
+                offer: 350,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/vygixmrxr5oferlex6sc"
+            },
+            {
+                id:2,
+                name:"Subash veg Resturant",
+                Location:"Tamil Nadu,Karur",
+                offer: 350 ,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/2411fa7f42286946897958539b16ead5"
+            },
+            {
+                id:3,
+                name:"Maduram Resturant",
+                Location:"Tamil Nadu,Tenkasi",
+                offer: 350 ,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/duhxjakx1ehqfl3yoan5"
+            },
+            {
+                id:4,
+                name:"Kumar Resturant",
+                Location:"Tamil Nadu,Madurai",
+                offer:  350 ,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xhbcrtzfy6cfx4sowncp"
+            },
+            {
+                id:5,
+                name:"QRS Resturant",
+                Location:"Tamil Nadu,Tirunelveli",
+                offer:  350 ,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/c8ltu6vvpolremu5oa96"
+            },
+            {
+                id:3,
+                name:"Maduram Resturant",
+                Location:"Tamil Nadu,Tenkasi",
+                offer: 350 ,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/x5ejencwrp6qx9eyu9bh"
+            },
+            {
+                id:6,
+                name:"SKRV Resturant",
+                Location:"Tamil Nadu,Thoothukudi",
+                offer:  350 ,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bzxjmpmivzsxa9zqbjme"
+            },
+            {
+                id:1,
+                name:"KRV Resturant",
+                Location:"Tamil Nadu,Hosur",
+                offer:  350,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/vygixmrxr5oferlex6sc"
+            },
+            {
+                id:2,
+                name:"Apple Resturant",
+                Location:"Tamil Nadu,Ooty",
+                offer:  350 ,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/jys7zsopl1sjy2wwxadd"
+            },
+            {
+                id:3,
+                name:"Arun Resturant",
+                Location:"Tamil Nadu,Nagapatinam",
+                offer:  350 ,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/kquvmgyw4bfolksc2b0q"
+            },
+            {
+                id:4,
+                name:"Aruvi Resturant",
+                Location:"Tamil Nadu,Tenkasi",
+                offer:  350 ,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rkqv12lccau98khsp2t7"
+            },
+            {
+                id:5,
+                name:"Kali Resturant",
+                Location:"Tamil Nadu,Covai",
+                offer: 350,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ufoidiletnquihcuwrnh"
+            },
+            {
+                id:6,
+                name:"Mari Resturant",
+                Location:"Tamil Nadu,Ramnadu",
+                offer: 350 ,
+                rate:4.2,
+                time:"2 hours",
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/2725f3b972c039cffd84bd2dd45423a9"
+            }
+        ]
+
+        let cont=document.querySelector(".container");
+        let cards=document.createElement("div");
+        cards.classList.add("row");
+        cont.appendChild(cards);
+
+        foodlist.forEach(function(e){
+            let div=document.createElement("div");
+        div.classList.add("col");
+        cards.appendChild(div);
+
+        let div2=document.createElement("div");
+        div2.classList.add("col-card");
+        div.appendChild(div2);
+        
+
+        let img=document.createElement("img");
+        img.src=e.imgurl;
+        div2.appendChild(img);
+
+        let head=document.createElement("h2");
+        head.innerHTML=e.name;
+        div2.appendChild(head);
+
+        let para=document.createElement("p");
+        para.innerHTML=e.Location;
+        div2.appendChild(para);
+
+
+        let div3=document.createElement("div");
+        div3.classList.add("price");
+        div2.appendChild(div3);
+       
+
+        let para2=document.createElement("p");
+        para2.classList.add("paraname")
+        para2.innerHTML=`<iconify-icon icon="ic:round-star-rate" style="color:white;" width="17"></iconify-icon> ${e.rate}`;
+        div3.appendChild(para2);
+        
+        let para1=document.createElement("p");
+        para1.innerHTML=e.offer;
+        div3.appendChild(para1);
+
+
+        let para3=document.createElement("p");
+        para3.innerHTML=e.time;
+        div3.appendChild(para3);
+
+
+       
+
+        let head2=document.createElement("h4");
+        head2.innerHTML=`<iconify-icon inline icon="bxs:offer" style="color: :rgb(118, 10, 10);"></iconify-icon> 60% off up to ₹120 | Use code TRYNEW`;
+        div2.appendChild(head2);
+
+
+
+        let head3=document.createElement("h3");
+        head3.innerHTML="Quick view";
+        div2.appendChild(head3);
+    });
+       
+
+
+            console.log(cont);
+    </script>
+</body>
+</html>
